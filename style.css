@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: transparent; /* Убираем фон */
+  color: black; /* Цвет текста по умолчанию */
+  padding: 1em 2em 1em 2em; /* Добавляем отступы слева и справа */
+  text-align: left;
+  border-bottom: 2px solid #000000; /* Тонкая чёрная полоса снизу */
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+nav ul li a {
+  color: #000000; /* Синие ссылки */
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline; /* Подчёркивание при наведении */
+}
+
+main {
+  padding: 2em;
+}
+
+footer {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  padding: 1em 2em; /* Добавляем отступы слева и справа */
+  position: relative;
+  width: 100%;
+}
+
+img {
+  border-radius: 50%; /* Круглая форма изображения */
+  margin-top: 10px;
+}
+
+section p {
+  margin-top: 10px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.about-container img {
+  flex-shrink: 0;
+  width: 400px; /* Устанавливаем ширину изображения */
+  height: auto; /* Сохраняем пропорции изображения */
+  border-radius: 10%;
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px; /* Увеличение отступа между изображением и текстовым блоком */
+}
+
+.text-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Равномерное разделение на 3 колонки */
+  gap: 24px; /* Отступ между колонками */
+  flex-grow: 1;
+}
+
+.text-item {
+  display: flex;
+  flex-direction: column; /* Иконка будет сверху, а текст снизу */
+  align-items: flex-start; /* Выравнивание по левому краю */
+  text-align: left; /* Выравнивание текста по левому краю */
+}
+
+.text-item svg {
+  margin-bottom: 10px; /* Отступ между иконкой и текстом */
+}
+
+.text-container p {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+section {
+  margin-top: 20px; /* Увеличиваем отступ сверху для всего контейнера секции */
+}
+
+/* Стили для контейнера проектов */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Автоматическое создание колонок с минимальной шириной 300px */
+  gap: 20px; /* Отступы между карточками */
+}
+
+.project-item {
+  background-color: #eaeaea;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column; /* Изображение, заголовок и описание вертикально */
+  text-align: center; /* Центрируем текст */
+}
+
+.project-image {
+  width: 100%; /* Изображение растягивается на всю ширину карточки */
+  height: auto; /* Сохраняет пропорции изображения */
+  border-radius: 8px; /* Радиус углов изображения */
+  margin-bottom: 15px; /* Отступ между изображением и заголовком */
+}
+
+.project-item h3 {
+  font-size: 18px;
+  margin: 10px 0; /* Отступы для заголовка */
+}
+
+.project-item p {
+  font-size: 14px;
+}
+
+
+/* Стили для страницы About */
+body.about-page {
+  background-color: #f4f4f4; /* Фон только для страницы About */
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content {
+  text-align: center;
+  width: 500px;
+  background-color: #fff;
+  padding: 80px;
+  border-radius: 8px;
+}
+
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+}
+
+.about-icon {
+  fill: #353535; /* Чёрный цвет иконки */
+  width: 120px;
+  height: 120px;
+}

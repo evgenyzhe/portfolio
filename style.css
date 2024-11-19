@@ -1,3 +1,4 @@
+/* === 1. Общие стили для страницы === */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -5,12 +6,13 @@ body {
   box-sizing: border-box;
 }
 
+/* === 2. Стили для хедера и навигации === */
 header {
   background-color: transparent; /* Убираем фон */
   color: black; /* Цвет текста по умолчанию */
-  padding: 1em 2em 1em 2em; /* Добавляем отступы слева и справа */
+  padding: 1em 2em; /* Отступы слева и справа */
   text-align: left;
-  border-bottom: 2px solid #000000; /* Тонкая чёрная полоса снизу */
+  border-bottom: 2px solid #000000; /* Чёрная полоса снизу */
 }
 
 nav ul {
@@ -25,7 +27,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #000000; /* Синие ссылки */
+  color: #000000; /* Цвет ссылок */
   text-decoration: none;
 }
 
@@ -33,22 +35,17 @@ nav ul li a:hover {
   text-decoration: underline; /* Подчёркивание при наведении */
 }
 
+nav ul li a.active {
+  font-weight: bold;
+}
+
+/* === 3. Основные стили контента === */
 main {
   padding: 2em;
 }
 
-footer {
-  background-color: transparent;
-  color: rgb(0, 0, 0);
-  text-align: left;
-  padding: 1em 2em; /* Добавляем отступы слева и справа */
-  position: relative;
-  width: 100%;
-}
-
-img {
-  border-radius: 50%; /* Круглая форма изображения */
-  margin-top: 10px;
+section {
+  margin-top: 20px; /* Отступ сверху для секции */
 }
 
 section p {
@@ -57,48 +54,62 @@ section p {
   font-size: 16px;
 }
 
-.about-container img {
-  flex-shrink: 0;
+/* === 4. Стили для футера === */
+footer {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  padding: 1em 2em; /* Отступы слева и справа */
+  position: relative;
+  width: 100%;
+}
+
+/* === 5. Стили для изображения на главной === */
+img {
+  border-radius: 50%; /* Круглая форма изображения */
   width: 400px; /* Устанавливаем ширину изображения */
-  height: auto; /* Сохраняем пропорции изображения */
-  border-radius: 10%;
+  height: 400px; /* Устанавливаем высоту изображения */
+  margin-top: 10px;
+  margin-right: 40px; /* Отступ справа от контента */
+}
+
+/* === 6. Стили для страницы "About" === */
+body.about-page {
+  background-color: #f4f4f4; /* Фон только для страницы About */
 }
 
 .about-container {
   display: flex;
-  align-items: flex-start;
-  gap: 40px; /* Увеличение отступа между изображением и текстовым блоком */
+  justify-content: center;
+  align-items: center;
 }
 
-.text-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Равномерное разделение на 3 колонки */
-  gap: 24px; /* Отступ между колонками */
-  flex-grow: 1;
+.about-content {
+  text-align: center;
+  width: 500px;
+  background-color: #fff;
+  padding: 80px;
+  border-radius: 8px;
 }
 
-.text-item {
-  display: flex;
-  flex-direction: column; /* Иконка будет сверху, а текст снизу */
-  align-items: flex-start; /* Выравнивание по левому краю */
-  text-align: left; /* Выравнивание текста по левому краю */
+/* === 7. Стили для заголовков и текста на странице "About" === */
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.text-item svg {
-  margin-bottom: 10px; /* Отступ между иконкой и текстом */
+p {
+  font-size: 16px;
+  color: #666;
 }
 
-.text-container p {
-  margin: 0;
-  padding: 0;
-  text-align: left;
+.about-icon {
+  fill: #353535; /* Чёрный цвет иконки */
+  width: 120px;
+  height: 120px;
 }
 
-section {
-  margin-top: 20px; /* Увеличиваем отступ сверху для всего контейнера секции */
-}
-
-/* Стили для контейнера проектов */
+/* === 8. Стили для контейнера проектов === */
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Автоматическое создание колонок с минимальной шириной 300px */
@@ -128,41 +139,4 @@ section {
 
 .project-item p {
   font-size: 14px;
-}
-
-
-/* Стили для страницы About */
-body.about-page {
-  background-color: #f4f4f4; /* Фон только для страницы About */
-}
-
-.about-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.about-content {
-  text-align: center;
-  width: 500px;
-  background-color: #fff;
-  padding: 80px;
-  border-radius: 8px;
-}
-
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 16px;
-  color: #666;
-}
-
-.about-icon {
-  fill: #353535; /* Чёрный цвет иконки */
-  width: 120px;
-  height: 120px;
 }

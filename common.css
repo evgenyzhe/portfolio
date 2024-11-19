@@ -1,0 +1,58 @@
+/* === Общие стили для страницы === */
+body {
+  font-family: Arial, sans-serif;
+  margin-left: 100px; 
+  margin-right: 100px;
+  box-sizing: border-box;
+}
+
+main {
+  padding: 2em 0em;
+}
+
+/* === Хэдер === */
+
+header {
+  background-color: transparent;
+  color: black;
+  padding: 1em 0em;
+  text-align: left;
+  border-bottom: 2px solid #000000;
+}
+
+/* === Ссылки на страницы === */
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 16px;
+}
+
+nav ul li a {
+  color: #000000;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+nav ul li a.active {
+  font-weight: bold;
+}
+
+/* === Футтер и всё что снизу === */
+
+footer {
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  text-align: left;
+  padding: 1em 0em;
+  position: relative;
+  width: 100%;
+}

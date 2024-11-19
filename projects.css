@@ -1,0 +1,31 @@
+/* === Стили для контейнера проектов === */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-item {
+  background-color: #eaeaea;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-item h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.project-item p {
+  font-size: 14px;
+}

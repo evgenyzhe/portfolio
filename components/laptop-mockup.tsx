@@ -5,7 +5,7 @@ export function LaptopMockup() {
     <figure className="relative">
       <div className="overflow-hidden rounded-lg border border-line bg-white shadow-soft">
         <Image
-          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/hero-laptop-mockup.png`}
+          src="/portfolio/images/hero-laptop-mockup.png"
           alt="Laptop mockup showing a complex analytics and financial workflow interface"
           width={1792}
           height={1024}

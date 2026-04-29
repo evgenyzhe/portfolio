@@ -91,7 +91,7 @@ export default function Home() {
             title="Three examples of the problems I am best equipped to solve."
             description="Placeholder case cards are structured around the details recruiters usually need first: problem, role, result, and product area. Each card opens an internal case study page."
           />
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid items-start gap-6 lg:grid-cols-3">
             {caseStudies.map((caseStudy) => (
               <CaseCard key={caseStudy.title} {...caseStudy} />
             ))}

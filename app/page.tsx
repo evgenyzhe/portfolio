@@ -4,6 +4,7 @@ import { CaseCard } from "@/components/case-card";
 import { LaptopMockup } from "@/components/laptop-mockup";
 import { LinkButton } from "@/components/link-button";
 import { SectionHeading } from "@/components/section-heading";
+import { SmoothScrollLink } from "@/components/smooth-scroll-link";
 import { getAssetPath } from "@/lib/get-asset-path";
 import {
   caseStudies,
@@ -14,35 +15,47 @@ import {
 
 export default function Home() {
   return (
-    <main>
-      <header className="border-b border-line/80 bg-white/85 backdrop-blur">
+    <main id="top">
+      <header className="sticky top-0 z-50 bg-[#F6F7F7]">
         <nav
           aria-label="Primary navigation"
           className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8"
         >
-          <Link href="/" className="text-sm font-semibold text-ink">
+          <SmoothScrollLink href="#top" className="text-sm font-semibold text-ink">
             Product Designer Portfolio
-          </Link>
+          </SmoothScrollLink>
           <div className="hidden items-center gap-7 text-sm font-medium text-muted sm:flex">
-            <a className="transition hover:text-ink" href="#cases">
-              Cases
-            </a>
-            <a className="transition hover:text-ink" href="#process">
-              Process
-            </a>
-            <a className="transition hover:text-ink" href="#experience">
-              Experience
-            </a>
-            <a className="transition hover:text-ink" href="#contact">
-              Contact
-            </a>
+            <SmoothScrollLink
+              href="#cases"
+              className="transition hover:text-ink"
+            >
+              Кейсы
+            </SmoothScrollLink>
+            <SmoothScrollLink
+              href="#process"
+              className="transition hover:text-ink"
+            >
+              Процесс
+            </SmoothScrollLink>
+            <SmoothScrollLink
+              href="#experience"
+              className="transition hover:text-ink"
+            >
+              Опыт
+            </SmoothScrollLink>
+            <SmoothScrollLink
+              href="#contact"
+              className="transition hover:text-ink"
+            >
+              Контакты
+            </SmoothScrollLink>
           </div>
         </nav>
       </header>
 
       <section className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:py-20">
         <div>
-          <div className="relative h-[100px] w-[100px] overflow-hidden rounded-full border border-line bg-white shadow-soft">
+          <div className="relative h-[100px] w-[100px] overflow-hidden rounded-full bg-white">
             <Image
               src={getAssetPath("images/avatar-evgeniy-zhuravlev.jpg")}
               alt="Евгений Журавлёв"
@@ -76,7 +89,7 @@ export default function Home() {
           </div>
         </div>
         <div className="relative">
-          <div className="pointer-events-none absolute -left-4 top-6 z-10 rounded-full border border-line bg-white px-4 py-3 text-sm font-semibold text-ink shadow-soft sm:-left-6 sm:top-8">
+          <div className="pointer-events-none absolute -left-4 top-6 z-10 rounded-full bg-[#DEDFE3] px-4 py-3 text-sm font-semibold text-ink sm:-left-6 sm:top-8">
             12+ лет в дизайне интерфейсов
           </div>
           <LaptopMockup />
@@ -85,7 +98,7 @@ export default function Home() {
 
       <section
         id="positioning"
-        className="border-y border-line bg-white py-20 sm:py-24"
+        className="border-y border-line bg-transparent py-20 sm:py-24"
       >
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <SectionHeading
@@ -97,7 +110,7 @@ export default function Home() {
             {positioningItems.map((item) => (
               <div
                 key={item}
-                className="rounded-lg border border-line bg-panel p-5 text-lg font-semibold leading-7 text-ink"
+                className="rounded-[32px] bg-white p-5 text-lg font-semibold leading-7 text-ink"
               >
                 {item}
               </div>
@@ -137,7 +150,7 @@ export default function Home() {
             {processSteps.map((step, index) => (
               <li
                 key={step}
-                className="rounded-lg border border-white/14 bg-white/[0.04] p-5"
+                className="rounded-[32px] bg-white/[0.06] p-5"
               >
                 <span className="text-sm font-semibold text-white/50">
                   0{index + 1}
@@ -159,7 +172,7 @@ export default function Home() {
             {strengths.map((strength) => (
               <div
                 key={strength}
-                className="flex min-h-24 items-center rounded-lg border border-line bg-white p-5 text-lg font-semibold text-ink"
+                className="flex min-h-24 items-center rounded-[32px] bg-white p-5 text-lg font-semibold text-ink"
               >
                 {strength}
               </div>
@@ -170,7 +183,7 @@ export default function Home() {
 
       <section
         id="experience"
-        className="border-y border-line bg-white py-20 sm:py-24"
+        className="border-y border-line bg-transparent py-20 sm:py-24"
       >
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
           <SectionHeading
@@ -184,7 +197,7 @@ export default function Home() {
               ["9+", "years in product teams"],
               ["3", "domains: fintech, telecom, studios"]
             ].map(([value, label]) => (
-              <div key={label} className="rounded-lg bg-panel p-6">
+              <div key={label} className="rounded-[32px] bg-white p-6">
                 <p className="text-4xl font-semibold tracking-tight text-ink">
                   {value}
                 </p>
@@ -196,7 +209,7 @@ export default function Home() {
       </section>
 
       <section id="contact" className="px-5 py-20 sm:px-8 sm:py-28">
-        <div className="mx-auto max-w-7xl rounded-lg border border-line bg-ink p-8 text-white sm:p-12 lg:flex lg:items-end lg:justify-between lg:gap-12">
+        <div className="mx-auto max-w-7xl rounded-[32px] bg-ink p-8 text-white sm:p-12 lg:flex lg:items-end lg:justify-between lg:gap-12">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
               Contact
@@ -212,7 +225,7 @@ export default function Home() {
           </div>
           <Link
             href="mailto:hello@example.com"
-            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-md bg-white px-6 text-sm font-semibold text-ink transition hover:bg-panel focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink lg:mt-0"
+            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-ink transition-colors hover:bg-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink lg:mt-0"
           >
             Contact me
           </Link>

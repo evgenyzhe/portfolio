@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { getAssetPath } from "@/lib/get-asset-path";
 import type { CaseStudy } from "@/lib/portfolio-data";
@@ -13,13 +12,13 @@ export function CaseCard({
   outcome
 }: CaseStudy) {
   return (
-    <Link
+    <a
       href={`/case-studies/${slug}`}
-      className="group block rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4"
+      className="group block rounded-[32px] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4"
       aria-label={`Open case study: ${title}`}
     >
-      <article className="flex flex-col overflow-hidden rounded-lg border border-line bg-white shadow-[0_12px_40px_rgba(16,20,24,0.04)] transition-shadow duration-200 group-hover:border-accent/55 group-hover:shadow-[0_10px_24px_rgba(16,20,24,0.08)] group-focus-visible:border-accent/55 group-focus-visible:shadow-[0_10px_24px_rgba(16,20,24,0.08)]">
-        <div className="relative aspect-[3/4] w-full overflow-hidden border-b border-line bg-panel">
+      <article className="flex flex-col overflow-hidden rounded-[32px] bg-white transition-colors duration-200 group-hover:bg-[#f4f5f6] group-focus-visible:bg-[#f4f5f6]">
+        <div className="relative aspect-[3/4] w-full overflow-hidden bg-panel">
           <Image
             src={getAssetPath(previewImage)}
             alt={`${title} interface preview`}
@@ -53,6 +52,6 @@ export function CaseCard({
           </span>
         </div>
       </article>
-    </Link>
+    </a>
   );
 }

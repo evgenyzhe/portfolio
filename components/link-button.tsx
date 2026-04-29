@@ -1,29 +1,43 @@
-import Link from "next/link";
+"use client";
+
+import { SmoothScrollLink } from "@/components/smooth-scroll-link";
 
 type LinkButtonProps = {
   href: string;
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "accent";
+  className?: string;
 };
 
 export function LinkButton({
   href,
   children,
-  variant = "primary"
+  variant = "primary",
+  className = ""
 }: LinkButtonProps) {
   const styles =
     variant === "primary"
-      ? "bg-ink text-white hover:bg-black"
+      ? "bg-ink text-white hover:bg-accent"
       : variant === "accent"
         ? "bg-accent text-white hover:bg-accent/90"
-        : "border border-line bg-white text-ink hover:border-ink";
+        : "bg-panel text-ink hover:bg-accent hover:text-white";
+
+  const resolvedClassName = `inline-flex min-h-12 items-center justify-center rounded-full px-6 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 ${styles} ${className}`;
+
+  if (href.startsWith("#")) {
+    return (
+      <SmoothScrollLink
+        href={href as `#${string}`}
+        className={resolvedClassName}
+      >
+        {children}
+      </SmoothScrollLink>
+    );
+  }
 
   return (
-    <Link
-      href={href}
-      className={`inline-flex min-h-12 items-center justify-center rounded-md px-6 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 ${styles}`}
-    >
+    <a href={href} className={resolvedClassName}>
       {children}
-    </Link>
+    </a>
   );
 }

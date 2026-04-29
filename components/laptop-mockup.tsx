@@ -4,7 +4,7 @@ import { getAssetPath } from "@/lib/get-asset-path";
 export function LaptopMockup() {
   return (
     <figure className="relative">
-      <div className="aspect-square overflow-hidden rounded-lg border border-line bg-white shadow-soft">
+      <div className="aspect-square overflow-hidden rounded-[32px] bg-white">
         <Image
           src={getAssetPath("images/hero-laptop-mockup.png")}
           alt="Laptop mockup showing a complex analytics and financial workflow interface"

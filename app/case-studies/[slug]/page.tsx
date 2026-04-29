@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { LinkButton } from "@/components/link-button";
@@ -48,7 +47,7 @@ function SectionBlock({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-lg border border-line bg-white p-6 sm:p-8">
+    <section className="rounded-[32px] bg-white p-6 sm:p-8">
       <h2 className="text-2xl font-semibold tracking-tight text-ink">
         {title}
       </h2>
@@ -68,28 +67,35 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const nextCase = getCaseStudyBySlug(caseStudy.nextCaseSlug);
 
   return (
-    <main className="min-h-screen bg-[linear-gradient(180deg,rgba(245,247,250,0.9)_0%,rgba(251,252,254,1)_34%)]">
-      <header className="border-b border-line/80 bg-white/85 backdrop-blur">
+    <main className="min-h-screen">
+      <header className="sticky top-0 z-50 bg-[#F6F7F7]">
         <nav
           aria-label="Case study navigation"
           className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8"
         >
-          <Link href="/" className="text-sm font-semibold text-ink">
+          {/* Intentionally use hard navigation to avoid animated scroll on page-to-page transitions. */}
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a href="/" className="text-sm font-semibold text-ink">
             Product Designer Portfolio
-          </Link>
-          <Link
+          </a>
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+          <a
             href="/"
             className="text-sm font-medium text-muted transition hover:text-ink"
           >
             На главную
-          </Link>
+          </a>
         </nav>
       </header>
 
-      <article className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
+      <article className="mx-auto max-w-7xl px-5 pb-16 pt-20 sm:px-8 sm:pb-20 sm:pt-20">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
-            <LinkButton href="/" variant="secondary">
+            <LinkButton
+              href="/"
+              variant="secondary"
+              className="bg-[#DEDFE3] px-8 focus:ring-offset-[#EDEEF0]"
+            >
               Назад
             </LinkButton>
             <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-ink sm:text-5xl lg:text-6xl">
@@ -100,7 +106,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </p>
           </div>
 
-          <figure className="overflow-hidden rounded-lg border border-line bg-white shadow-[0_12px_40px_rgba(16,20,24,0.04)]">
+          <figure className="overflow-hidden rounded-[32px] bg-white">
             <div className="aspect-[4/3]">
               <Image
                 src={getAssetPath(caseStudy.previewImage)}
@@ -115,7 +121,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </figure>
         </div>
 
-        <aside className="mt-10 rounded-lg border border-line bg-white p-6 shadow-[0_12px_40px_rgba(16,20,24,0.04)] sm:p-8">
+        <aside className="mt-10 rounded-[32px] bg-white p-6 sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
             Case overview
           </p>
@@ -153,7 +159,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               {caseStudy.process.map((step, index) => (
                 <li
                   key={step}
-                  className="rounded-md bg-panel px-5 py-4 text-ink"
+                  className="rounded-[32px] bg-panel px-5 py-4 text-ink"
                 >
                   <span className="mr-3 text-sm font-semibold text-accent">
                     0{index + 1}
@@ -167,7 +173,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           <SectionBlock title="Solution">
             <ul className="grid gap-4">
               {caseStudy.solution.map((item) => (
-                <li key={item} className="rounded-md bg-panel px-5 py-4 text-ink">
+                <li key={item} className="rounded-[32px] bg-panel px-5 py-4 text-ink">
                   {item}
                 </li>
               ))}
@@ -177,7 +183,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           <SectionBlock title="Outcome">
             <ul className="grid gap-4">
               {caseStudy.outcome.map((item) => (
-                <li key={item} className="rounded-md bg-panel px-5 py-4 text-ink">
+                <li key={item} className="rounded-[32px] bg-panel px-5 py-4 text-ink">
                   {item}
                 </li>
               ))}
@@ -185,7 +191,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </SectionBlock>
         </div>
 
-        <section className="mt-14 rounded-lg border border-line bg-ink p-8 text-white sm:p-10">
+        <section className="mt-14 rounded-[32px] bg-ink p-8 text-white sm:p-10">
           <SectionHeading
             eyebrow="Next step"
             title={nextCase ? `Continue to ${nextCase.title}` : "Explore more work"}

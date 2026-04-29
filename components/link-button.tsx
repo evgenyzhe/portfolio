@@ -3,7 +3,7 @@ import Link from "next/link";
 type LinkButtonProps = {
   href: string;
   children: React.ReactNode;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "accent";
 };
 
 export function LinkButton({
@@ -14,7 +14,9 @@ export function LinkButton({
   const styles =
     variant === "primary"
       ? "bg-ink text-white hover:bg-black"
-      : "border border-line bg-white text-ink hover:border-ink";
+      : variant === "accent"
+        ? "bg-accent text-white hover:bg-accent/90"
+        : "border border-line bg-white text-ink hover:border-ink";
 
   return (
     <Link

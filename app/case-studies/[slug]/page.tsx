@@ -1,8 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { LinkButton } from "@/components/link-button";
 import { SectionHeading } from "@/components/section-heading";
+import { getAssetPath } from "@/lib/get-asset-path";
 import {
   caseStudies,
   getCaseStudyBySlug
@@ -79,7 +81,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             href="/"
             className="text-sm font-medium text-muted transition hover:text-ink"
           >
-            Back to homepage
+            На главную
           </Link>
         </nav>
       </header>
@@ -87,12 +89,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       <article className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>
-            <Link
-              href="/"
-              className="text-sm font-semibold uppercase tracking-[0.18em] text-accent"
-            >
-              Back to homepage
-            </Link>
+            <LinkButton href="/" variant="secondary">
+              Назад
+            </LinkButton>
             <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-ink sm:text-5xl lg:text-6xl">
               {caseStudy.title}
             </h1>
@@ -101,26 +100,40 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </p>
           </div>
 
-          <aside className="rounded-lg border border-line bg-white p-6 shadow-[0_12px_40px_rgba(16,20,24,0.04)]">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
-              Case overview
-            </p>
-            <dl className="mt-6 space-y-5 text-sm leading-6">
-              <div>
-                <dt className="font-semibold text-ink">Product area</dt>
-                <dd className="mt-1 text-muted">{caseStudy.area}</dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-ink">Intro</dt>
-                <dd className="mt-1 text-muted">{caseStudy.intro}</dd>
-              </div>
-              <div>
-                <dt className="font-semibold text-ink">Role</dt>
-                <dd className="mt-1 text-muted">{caseStudy.role}</dd>
-              </div>
-            </dl>
-          </aside>
+          <figure className="overflow-hidden rounded-lg border border-line bg-white shadow-[0_12px_40px_rgba(16,20,24,0.04)]">
+            <div className="aspect-[4/3]">
+              <Image
+                src={getAssetPath(caseStudy.previewImage)}
+                alt={`${caseStudy.title} interface preview`}
+                width={1600}
+                height={1200}
+                className="h-full w-full object-contain"
+                sizes="(min-width: 1024px) 52vw, 100vw"
+                priority
+              />
+            </div>
+          </figure>
         </div>
+
+        <aside className="mt-10 rounded-lg border border-line bg-white p-6 shadow-[0_12px_40px_rgba(16,20,24,0.04)] sm:p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+            Case overview
+          </p>
+          <dl className="mt-6 grid gap-5 text-sm leading-6 sm:grid-cols-3 sm:gap-6">
+            <div>
+              <dt className="font-semibold text-ink">Product area</dt>
+              <dd className="mt-1 text-muted">{caseStudy.area}</dd>
+            </div>
+            <div>
+              <dt className="font-semibold text-ink">Intro</dt>
+              <dd className="mt-1 text-muted">{caseStudy.intro}</dd>
+            </div>
+            <div>
+              <dt className="font-semibold text-ink">Role</dt>
+              <dd className="mt-1 text-muted">{caseStudy.role}</dd>
+            </div>
+          </dl>
+        </aside>
 
         <div className="mt-14 grid gap-6">
           <SectionBlock title="Context">
@@ -184,14 +197,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             inverted
           />
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <LinkButton href="/" variant="secondary">
+              На главную
+            </LinkButton>
             {nextCase ? (
-              <LinkButton href={`/case-studies/${nextCase.slug}`}>
-                Next case study
+              <LinkButton href={`/case-studies/${nextCase.slug}`} variant="accent">
+                Следующий кейс
               </LinkButton>
             ) : null}
-            <LinkButton href="/" variant="secondary">
-              Back to homepage
-            </LinkButton>
           </div>
         </section>
       </article>

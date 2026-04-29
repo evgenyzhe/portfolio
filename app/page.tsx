@@ -1,8 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CaseCard } from "@/components/case-card";
 import { LaptopMockup } from "@/components/laptop-mockup";
 import { LinkButton } from "@/components/link-button";
 import { SectionHeading } from "@/components/section-heading";
+import { getAssetPath } from "@/lib/get-asset-path";
 import {
   caseStudies,
   positioningItems,
@@ -40,16 +42,31 @@ export default function Home() {
 
       <section className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:py-20">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
-            12+ years in interface design
-          </p>
-          <h1 className="mt-6 max-w-4xl text-5xl font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl">
-            Senior Product Designer for complex digital products
+          <div className="relative h-[100px] w-[100px] overflow-hidden rounded-full border border-line bg-white shadow-soft">
+            <Image
+              src={getAssetPath("images/avatar-evgeniy-zhuravlev.jpg")}
+              alt="Евгений Журавлёв"
+              fill
+              className="object-cover"
+              sizes="100px"
+              priority
+            />
+          </div>
+          <h1 className="mt-8 max-w-4xl text-5xl font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl">
+            Евгений Журавлёв
           </h1>
-          <p className="mt-7 max-w-2xl text-xl leading-9 text-muted">
-            I design complex interfaces for fintech, analytics, dashboards, and
-            business-heavy digital products, turning dense logic and data into
-            clear, usable UX.
+          <h4 className="mt-4 text-xl font-semibold tracking-tight text-muted sm:text-2xl">
+            Senior Product Designer
+          </h4>
+          <h2 className="mt-8 max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
+            Проектирую сложные цифровые продукты, где важны системность,
+            ясность и качество решений
+          </h2>
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-muted sm:text-xl sm:leading-9">
+            Специализируюсь на сложных веб-интерфейсах, B2B-сервисах и
+            внутренних продуктовых системах. Перевожу многослойную
+            бизнес-логику, аналитику и операционные процессы в понятные и
+            масштабируемые интерфейсные решения.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <LinkButton href="#cases">View case studies</LinkButton>
@@ -58,7 +75,12 @@ export default function Home() {
             </LinkButton>
           </div>
         </div>
-        <LaptopMockup />
+        <div className="relative">
+          <div className="pointer-events-none absolute -left-4 top-6 z-10 rounded-full border border-line bg-white px-4 py-3 text-sm font-semibold text-ink shadow-soft sm:-left-6 sm:top-8">
+            12+ лет в дизайне интерфейсов
+          </div>
+          <LaptopMockup />
+        </div>
       </section>
 
       <section

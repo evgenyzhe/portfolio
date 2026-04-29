@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/get-asset-path";
 import type { CaseStudy } from "@/lib/portfolio-data";
 
 export function CaseCard({
@@ -20,7 +21,7 @@ export function CaseCard({
       <article className="flex flex-col overflow-hidden rounded-lg border border-line bg-white shadow-[0_12px_40px_rgba(16,20,24,0.04)] transition-shadow duration-200 group-hover:border-accent/55 group-hover:shadow-[0_10px_24px_rgba(16,20,24,0.08)] group-focus-visible:border-accent/55 group-focus-visible:shadow-[0_10px_24px_rgba(16,20,24,0.08)]">
         <div className="relative aspect-[3/4] w-full overflow-hidden border-b border-line bg-panel">
           <Image
-            src={previewImage}
+            src={getAssetPath(previewImage)}
             alt={`${title} interface preview`}
             fill
             className="object-contain"

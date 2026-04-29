@@ -52,26 +52,26 @@ export default function Home() {
               priority
             />
           </div>
-          <h1 className="mt-8 max-w-4xl text-5xl font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl">
+          <h1 className="mt-8 max-w-4xl text-4xl font-semibold tracking-tight text-ink sm:text-5xl lg:text-6xl">
             Евгений Журавлёв
           </h1>
           <h4 className="mt-4 text-xl font-semibold tracking-tight text-muted sm:text-2xl">
             Senior Product Designer
           </h4>
-          <h2 className="mt-8 max-w-3xl text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
+          <h2 className="mt-8 max-w-3xl text-2xl font-semibold leading-tight tracking-tight text-ink sm:text-3xl">
             Проектирую сложные цифровые продукты, где важны системность,
             ясность и качество решений
           </h2>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-muted sm:text-xl sm:leading-9">
+          <p className="mt-7 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
             Специализируюсь на сложных веб-интерфейсах, B2B-сервисах и
             внутренних продуктовых системах. Перевожу многослойную
             бизнес-логику, аналитику и операционные процессы в понятные и
             масштабируемые интерфейсные решения.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <LinkButton href="#cases">View case studies</LinkButton>
+            <LinkButton href="#cases">Посмотреть кейсы</LinkButton>
             <LinkButton href="#contact" variant="secondary">
-              Contact me
+              Связаться со мной
             </LinkButton>
           </div>
         </div>

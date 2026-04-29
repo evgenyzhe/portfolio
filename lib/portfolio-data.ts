@@ -27,7 +27,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       "Clarifying fragmented service journeys and creating a practical roadmap for design decisions.",
     area: "Service ecosystem",
-    previewImage: "/images/case-studies/ux-audit-preview.png",
+    previewImage: "images/case-studies/ux-audit-preview.png",
     intro:
       "This placeholder case study shows how I would structure an audit for a mature service with multiple entry points, operational constraints, and accumulated UX debt.",
     problem:
@@ -56,7 +56,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       "Translating conditional financial logic into a guided decision flow that feels understandable and trustworthy.",
     area: "Fintech",
-    previewImage: "/images/case-studies/financial-scenario-preview.png",
+    previewImage: "images/case-studies/financial-scenario-preview.png",
     intro:
       "This placeholder case study focuses on a banking scenario where product value depended on making complex rules legible without oversimplifying them.",
     problem:
@@ -85,7 +85,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       "Organising dense signals into a dashboard that supports fast scanning, comparison, and action.",
     area: "Analytics",
-    previewImage: "/images/case-studies/dashboard-analytics-preview.png",
+    previewImage: "images/case-studies/dashboard-analytics-preview.png",
     intro:
       "This placeholder case study represents the kind of analytical interface work where the core challenge is not adding data, but making it operationally useful.",
     problem:

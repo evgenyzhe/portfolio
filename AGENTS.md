@@ -55,6 +55,7 @@ The visitor should quickly understand:
 - Maintain accessibility basics: headings, contrast, alt text, keyboard-friendly links/buttons
 - Optimize for performance
 - Do not hardcode repeated styles if a component is better
+- All static assets (images, icons, previews) must use `getAssetPath()`. Never use raw `/images/...` paths.
 
 ## Output rules
 Before making changes:

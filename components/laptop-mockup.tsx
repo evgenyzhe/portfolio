@@ -6,7 +6,7 @@ export function LaptopMockup() {
     <figure className="relative">
       <div className="overflow-hidden rounded-lg border border-line bg-white shadow-soft">
         <Image
-          src={getAssetPath("/images/hero-laptop-mockup.png")}
+          src={getAssetPath("images/hero-laptop-mockup.png")}
           alt="Laptop mockup showing a complex analytics and financial workflow interface"
           width={1792}
           height={1024}

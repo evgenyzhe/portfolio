@@ -1,6 +1,8 @@
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const GITHUB_PAGES_BASE_PATH = "/portfolio";
 
 export function getAssetPath(path: string) {
+  const isProd = process.env.NODE_ENV === "production";
+
   if (!path) {
     return path;
   }
@@ -15,5 +17,5 @@ export function getAssetPath(path: string) {
 
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;
 
-  return `${basePath}${normalizedPath}`;
+  return isProd ? `${GITHUB_PAGES_BASE_PATH}${normalizedPath}` : normalizedPath;
 }

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { LinkButton } from "@/components/link-button";
 import { SectionHeading } from "@/components/section-heading";
 import { getAssetPath } from "@/lib/get-asset-path";
+import { getPagePath } from "@/lib/get-page-path";
 import {
   caseStudies,
   getCaseStudyBySlug
@@ -73,14 +74,11 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           aria-label="Case study navigation"
           className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8"
         >
-          {/* Intentionally use hard navigation to avoid animated scroll on page-to-page transitions. */}
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-          <a href="/" className="text-sm font-semibold text-ink">
+          <a href={getPagePath("/")} className="text-sm font-semibold text-ink">
             Product Designer Portfolio
           </a>
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
           <a
-            href="/"
+            href={getPagePath("/")}
             className="text-sm font-medium text-muted transition hover:text-ink"
           >
             На главную

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { getAssetPath } from "@/lib/get-asset-path";
+import { getPagePath } from "@/lib/get-page-path";
 import type { CaseStudy } from "@/lib/portfolio-data";
 
 export function CaseCard({
@@ -13,7 +14,7 @@ export function CaseCard({
 }: CaseStudy) {
   return (
     <a
-      href={`/case-studies/${slug}`}
+      href={getPagePath(`/case-studies/${slug}`)}
       className="group block rounded-[32px] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4"
       aria-label={`Open case study: ${title}`}
     >

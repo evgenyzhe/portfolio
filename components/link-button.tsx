@@ -1,6 +1,7 @@
 "use client";
 
 import { SmoothScrollLink } from "@/components/smooth-scroll-link";
+import { getPagePath } from "@/lib/get-page-path";
 
 type LinkButtonProps = {
   href: string;
@@ -36,7 +37,7 @@ export function LinkButton({
   }
 
   return (
-    <a href={href} className={resolvedClassName}>
+    <a href={getPagePath(href)} className={resolvedClassName}>
       {children}
     </a>
   );

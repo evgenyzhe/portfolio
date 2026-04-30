@@ -4,7 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Senior Product Designer Portfolio",
   description:
-    "Portfolio of a senior product designer focused on complex digital products, fintech, analytics, dashboards, and clear UX for business logic."
+    "Portfolio of a senior product designer focused on complex digital products, fintech, analytics, dashboards, and clear UX for business logic.",
+  icons: "/portfolio/favicon.ico",
+  
 };
 
 export default function RootLayout({
@@ -19,8 +21,3 @@ export default function RootLayout({
   );
 }
 
-export const metadata = {
-  icons: {
-    icon: "/portfolio/favicon.ico",
-  },
-};

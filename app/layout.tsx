@@ -18,3 +18,9 @@ export default function RootLayout({
     </html>
   );
 }
+
+export const metadata = {
+  icons: {
+    icon: "/portfolio/favicon.ico",
+  },
+};

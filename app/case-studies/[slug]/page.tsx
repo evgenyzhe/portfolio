@@ -87,7 +87,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       </header>
 
       <article className="mx-auto max-w-7xl px-5 pb-16 pt-20 sm:px-8 sm:pb-20 sm:pt-20">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <LinkButton
               href="/"

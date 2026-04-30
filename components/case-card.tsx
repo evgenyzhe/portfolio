@@ -19,14 +19,16 @@ export function CaseCard({
       aria-label={`Open case study: ${title}`}
     >
       <article className="flex flex-col overflow-hidden rounded-[32px] bg-white transition-colors duration-200 group-hover:bg-[#f4f5f6] group-focus-visible:bg-[#f4f5f6]">
-        <div className="relative aspect-[3/4] w-full overflow-hidden bg-panel">
-          <Image
-            src={getAssetPath(previewImage)}
-            alt={`${title} interface preview`}
-            fill
-            className="object-contain"
-            sizes="(min-width: 1024px) 30vw, 100vw"
-          />
+        <div className="aspect-square w-full bg-panel p-6">
+          <div className="relative h-full w-full overflow-hidden">
+            <Image
+              src={getAssetPath(previewImage)}
+              alt={`${title} interface preview`}
+              fill
+              className="object-contain"
+              sizes="(min-width: 1024px) 30vw, 100vw"
+            />
+          </div>
         </div>
 
         <div className="flex flex-col p-6">
@@ -48,8 +50,8 @@ export function CaseCard({
               <dd className="mt-1 text-muted">{outcome[0]}</dd>
             </div>
           </dl>
-          <span className="mt-8 inline-flex w-fit items-center text-sm font-semibold text-ink underline decoration-line underline-offset-8 transition group-hover:decoration-ink">
-            Read case
+          <span className="mt-8 inline-flex min-h-12 w-fit items-center justify-center rounded-full bg-panel px-6 text-sm font-semibold text-ink transition-colors group-hover:bg-accent group-hover:text-white group-focus-visible:bg-accent group-focus-visible:text-white">
+            Посмотреть
           </span>
         </div>
       </article>

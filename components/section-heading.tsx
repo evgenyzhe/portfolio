@@ -14,9 +14,7 @@ export function SectionHeading({
   return (
     <div className="max-w-3xl">
       <p
-        className={`text-sm font-semibold uppercase tracking-[0.18em] ${
-          inverted ? "text-white/60" : "text-accent"
-        }`}
+        className="text-sm font-semibold uppercase tracking-[0.18em] text-accent"
       >
         {eyebrow}
       </p>

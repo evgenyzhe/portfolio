@@ -9,8 +9,7 @@ import { getAssetPath } from "@/lib/get-asset-path";
 import {
   caseStudies,
   positioningItems,
-  processSteps,
-  strengths
+  processSteps
 } from "@/lib/portfolio-data";
 
 export default function Home() {
@@ -163,40 +162,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-28">
-        <div className="mx-auto grid max-w-7xl gap-12 px-[52px] lg:grid-cols-[0.78fr_1.22fr]">
-          <SectionHeading
-            eyebrow="Strengths"
-            title="Senior value in complex product environments."
-          />
-          <div className="grid gap-4 sm:grid-cols-2">
-            {strengths.map((strength) => (
-              <div
-                key={strength}
-                className="flex min-h-24 items-center rounded-[32px] bg-white p-5 text-lg font-semibold text-ink"
-              >
-                {strength}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section
         id="experience"
         className="border-y border-line bg-transparent py-20 sm:py-24"
       >
         <div className="mx-auto grid max-w-7xl gap-10 px-[52px] lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
           <SectionHeading
-            eyebrow="Experience"
-            title="12+ years in interfaces, 9+ years inside product teams."
-            description="I have worked across Alfa-Bank, Megafon, and design studios, with a focus on fintech, telecom, B2B/B2C interfaces, analytics, and products where business logic shapes the user experience."
+            eyebrow="Опыт"
+            title="Более 12&nbsp;лет в&nbsp;области интерфейсов, более 9&nbsp;лет в&nbsp;продуктовых командах"
+            description="Я&nbsp;работал в&nbsp;Альфа-банке, Мегафоне и&nbsp;дизайн-студиях, уделяя особое внимание финтеху, телекоммуникациям, интерфейсам B2B/B2C, аналитике и&nbsp;продуктам, в&nbsp;которых бизнес-логика формирует пользовательский опыт."
           />
           <div className="grid gap-4 sm:grid-cols-3">
             {[
-              ["12+", "years in interface design"],
-              ["9+", "years in product teams"],
-              ["3", "domains: fintech, telecom, studios"]
+              ["12+", "лет в\u00a0дизайне интерфейсов"],
+              ["9+", "лет в\u00a0продуктовых командах"],
+              ["3", "направления: финтех, телеком, студии"]
             ].map(([value, label]) => (
               <div key={label} className="rounded-[32px] bg-white p-6">
                 <p className="text-4xl font-semibold tracking-tight text-ink">
@@ -212,23 +192,23 @@ export default function Home() {
       <section id="contact" className="px-[52px] py-20 sm:py-28">
         <div className="mx-auto max-w-7xl rounded-[32px] bg-ink p-8 text-white sm:p-12 lg:flex lg:items-end lg:justify-between lg:gap-12">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
-              Contact
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+              Контакты
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-5xl">
-              Looking for a designer who can work with complex product logic?
+              Открыт к&nbsp;диалогу о&nbsp;сложных цифровых продуктах
             </h2>
             <p className="mt-6 text-lg leading-8 text-white/70">
-              I am open to senior product design roles where research,
-              structure, interface clarity, and measurable product outcomes
-              matter.
+              Зрелый, самостоятельный и системный дизайнер, который умеет
+              не&nbsp;только проектировать интерфейсы, но&nbsp;и&nbsp;выстраивать
+              взаимодействие между людьми и&nbsp;командами
             </p>
           </div>
           <Link
             href="mailto:hello@example.com"
-            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-ink transition-colors hover:bg-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink lg:mt-0"
+            className="mt-8 inline-flex min-h-12 min-w-[196px] shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-white px-6 text-sm font-semibold text-ink transition-colors hover:bg-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink lg:mt-0"
           >
-            Contact me
+            Связаться со&nbsp;мной
           </Link>
         </div>
       </section>

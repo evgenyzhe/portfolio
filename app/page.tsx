@@ -53,7 +53,7 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-start gap-12 px-[52px] py-16 lg:grid-cols-[0.92fr_1.08fr] lg:py-20">
+      <section className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-start gap-12 px-[52px] py-16 lg:grid-cols-[0.92fr_1.08fr] lg:py-20 xl:min-h-0">
         <div>
           <div className="relative h-[100px] w-[100px] overflow-hidden rounded-full bg-white">
             <Image
@@ -95,21 +95,20 @@ export default function Home() {
 
       <section
         id="positioning"
-        className="border-y border-line bg-transparent py-20 sm:py-24"
+        className="border-b border-line bg-transparent pb-20 pt-8 sm:pb-24"
       >
         <div className="mx-auto max-w-7xl px-[52px]">
-          <SectionHeading
-            eyebrow="What I do"
-            title="I help product teams make complex logic understandable, testable, and ready for delivery."
-            description="My work sits between business requirements, user behavior, product constraints, and implementation reality."
-          />
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+            Помогаю командам
+          </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {positioningItems.map((item) => (
+            {positioningItems.map((item, index) => (
               <div
                 key={item}
                 className="rounded-[32px] bg-white p-5 text-lg font-semibold leading-7 text-ink"
               >
-                {item}
+                <PositioningIcon index={index} />
+                <p className="mt-5">{item}</p>
               </div>
             ))}
           </div>
@@ -119,9 +118,9 @@ export default function Home() {
       <section id="cases" className="py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-[52px]">
           <SectionHeading
-            eyebrow="Selected case studies"
-            title="Three examples of the problems I am best equipped to solve."
-            description="Placeholder case cards are structured around the details recruiters usually need first: problem, role, result, and product area. Each card opens an internal case study page."
+            eyebrow="Избранные кейсы"
+            title="Ниже — проекты, в&nbsp;которых я&nbsp;работал со&nbsp;сложными сценариями, многослойной бизнес-логикой и&nbsp;продуктовой неопределённостью"
+            description="В кейсах показываю не&nbsp;только итоговый интерфейс, но&nbsp;и&nbsp;ход мышления: контекст задачи, ограничения, ключевые решения и&nbsp;мой вклад в&nbsp;результат."
           />
           <div className="mt-12 grid items-start gap-6 lg:grid-cols-3">
             {caseStudies.map((caseStudy) => (
@@ -229,5 +228,49 @@ export default function Home() {
         </div>
       </section>
     </main>
+  );
+}
+
+function PositioningIcon({ index }: { index: number }) {
+  const paths = [
+    <>
+      <path d="M4 7h16" />
+      <path d="M4 12h10" />
+      <path d="M4 17h7" />
+      <path d="M17 13l3 3-3 3" />
+    </>,
+    <>
+      <path d="M5 19V5" />
+      <path d="M5 19h14" />
+      <path d="M8 15l3-4 3 2 4-6" />
+    </>,
+    <>
+      <path d="M6 5h8l4 4v10H6z" />
+      <path d="M14 5v4h4" />
+      <path d="M9 14h6" />
+      <path d="M9 17h4" />
+    </>,
+    <>
+      <path d="M12 5v4" />
+      <path d="M12 15v4" />
+      <path d="M5 12h4" />
+      <path d="M15 12h4" />
+      <circle cx="12" cy="12" r="3" />
+    </>
+  ];
+
+  return (
+    <svg
+      aria-hidden="true"
+      className="h-8 w-8 text-accent"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.75"
+      viewBox="0 0 24 24"
+    >
+      {paths[index]}
+    </svg>
   );
 }

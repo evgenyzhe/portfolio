@@ -1,8 +1,8 @@
 export const positioningItems = [
-  "Designing complex product flows",
-  "Turning business logic into clear UX",
-  "Data visualization and dashboards",
-  "Research -> hypotheses -> delivery -> validation"
+  "Структурировать сложные процессы и\u00a0пользовательские сценарии",
+  "Снижать когнитивную нагрузку в\u00a0насыщенных интерфейсах",
+  "Превращать бизнес-логику в\u00a0понятные UX-решения",
+  "Синхронизировать дизайн с\u00a0аналитикой, разработкой и\u00a0продуктом"
 ];
 
 export type CaseStudy = {

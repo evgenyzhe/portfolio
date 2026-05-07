@@ -19,7 +19,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-[#F6F7F7]">
         <nav
           aria-label="Primary navigation"
-          className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8"
+          className="mx-auto flex max-w-7xl items-center justify-between px-[52px] py-5"
         >
           <SmoothScrollLink href="#top" className="text-sm font-semibold text-ink">
             Product Designer Portfolio
@@ -53,7 +53,7 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-center gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:py-20">
+      <section className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-start gap-12 px-[52px] py-16 lg:grid-cols-[0.92fr_1.08fr] lg:py-20">
         <div>
           <div className="relative h-[100px] w-[100px] overflow-hidden rounded-full bg-white">
             <Image
@@ -72,14 +72,14 @@ export default function Home() {
             Senior Product Designer
           </h4>
           <h2 className="mt-8 max-w-3xl text-2xl font-semibold leading-tight tracking-tight text-ink sm:text-3xl">
-            Проектирую сложные цифровые продукты, где важны системность,
-            ясность и качество решений
+            Проектирую цифровые продукты, где&nbsp;важны системность, ясность
+            и&nbsp;качество решений
           </h2>
           <p className="mt-7 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
-            Специализируюсь на сложных веб-интерфейсах, B2B-сервисах и
-            внутренних продуктовых системах. Перевожу многослойную
-            бизнес-логику, аналитику и операционные процессы в понятные и
-            масштабируемые интерфейсные решения.
+            Специализируюсь на&nbsp;сложных веб-интерфейсах, B2B-сервисах
+            и&nbsp;внутренних продуктовых системах. Перевожу многослойную
+            бизнес-логику, аналитику и&nbsp;операционные процессы
+            в&nbsp;понятные и&nbsp;масштабируемые интерфейсные решения.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <LinkButton href="#cases">Посмотреть кейсы</LinkButton>
@@ -88,10 +88,7 @@ export default function Home() {
             </LinkButton>
           </div>
         </div>
-        <div className="relative">
-          <div className="pointer-events-none absolute -left-4 top-6 z-10 rounded-full bg-[#DEDFE3] px-4 py-3 text-sm font-semibold text-ink sm:-left-6 sm:top-8">
-            12+ лет в дизайне интерфейсов
-          </div>
+        <div className="relative self-start">
           <LaptopMockup />
         </div>
       </section>
@@ -100,7 +97,7 @@ export default function Home() {
         id="positioning"
         className="border-y border-line bg-transparent py-20 sm:py-24"
       >
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-7xl px-[52px]">
           <SectionHeading
             eyebrow="What I do"
             title="I help product teams make complex logic understandable, testable, and ready for delivery."
@@ -120,7 +117,7 @@ export default function Home() {
       </section>
 
       <section id="cases" className="py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-7xl px-[52px]">
           <SectionHeading
             eyebrow="Selected case studies"
             title="Three examples of the problems I am best equipped to solve."
@@ -138,7 +135,7 @@ export default function Home() {
         id="process"
         className="border-y border-line bg-ink py-20 text-white sm:py-24"
       >
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mx-auto max-w-7xl px-[52px]">
           <div className="max-w-3xl">
             <SectionHeading
               eyebrow="How I work"
@@ -163,7 +160,7 @@ export default function Home() {
       </section>
 
       <section className="py-20 sm:py-28">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.78fr_1.22fr]">
+        <div className="mx-auto grid max-w-7xl gap-12 px-[52px] lg:grid-cols-[0.78fr_1.22fr]">
           <SectionHeading
             eyebrow="Strengths"
             title="Senior value in complex product environments."
@@ -185,7 +182,7 @@ export default function Home() {
         id="experience"
         className="border-y border-line bg-transparent py-20 sm:py-24"
       >
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+        <div className="mx-auto grid max-w-7xl gap-10 px-[52px] lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
           <SectionHeading
             eyebrow="Experience"
             title="12+ years in interfaces, 9+ years inside product teams."
@@ -208,7 +205,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="px-5 py-20 sm:px-8 sm:py-28">
+      <section id="contact" className="px-[52px] py-20 sm:py-28">
         <div className="mx-auto max-w-7xl rounded-[32px] bg-ink p-8 text-white sm:p-12 lg:flex lg:items-end lg:justify-between lg:gap-12">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">

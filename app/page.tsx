@@ -137,21 +137,26 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-[52px]">
           <div className="max-w-3xl">
             <SectionHeading
-              eyebrow="How I work"
-              title="A practical process from uncertainty to validated product design."
+              eyebrow="Как я работаю"
+              title="Интересны задачи в&nbsp;сложных цифровых продуктах, где&nbsp;важны системность, зрелый продуктовый подход и&nbsp;высокий уровень ответственности"
               inverted
             />
           </div>
-          <ol className="mt-12 grid gap-3 md:grid-cols-3 lg:grid-cols-6">
+          <ol className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step, index) => (
               <li
-                key={step}
+                key={step.title}
                 className="rounded-[32px] bg-white/[0.06] p-5"
               >
                 <span className="text-sm font-semibold text-white/50">
                   0{index + 1}
                 </span>
-                <p className="mt-6 text-lg font-semibold">{step}</p>
+                <div className="mt-6">
+                  <h3 className="text-xl font-semibold">{step.title}</h3>
+                  <p className="mt-4 text-sm leading-6 text-white/60">
+                    {step.description}
+                  </p>
+                </div>
               </li>
             ))}
           </ol>

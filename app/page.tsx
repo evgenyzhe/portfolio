@@ -190,8 +190,17 @@ export default function Home() {
       </section>
 
       <section id="contact" className="px-[52px] py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl rounded-[32px] bg-ink p-8 text-white sm:p-12 lg:flex lg:items-end lg:justify-between lg:gap-12">
-          <div className="max-w-3xl">
+        <div className="relative mx-auto max-w-7xl rounded-[32px] bg-ink p-8 text-white sm:p-12 lg:flex lg:items-end lg:justify-between lg:gap-12">
+          <Image
+            src={getAssetPath("images/image-contact.png")}
+            alt=""
+            width={580}
+            height={571}
+            aria-hidden="true"
+            className="pointer-events-none absolute -top-16 right-10 hidden w-[260px] lg:block xl:right-16 xl:w-[300px]"
+            sizes="300px"
+          />
+          <div className="relative z-10 max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
               Контакты
             </p>
@@ -206,7 +215,7 @@ export default function Home() {
           </div>
           <Link
             href="mailto:hello@example.com"
-            className="mt-8 inline-flex min-h-12 min-w-[196px] shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-white px-6 text-sm font-semibold text-ink transition-colors hover:bg-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink lg:mt-0"
+            className="relative z-10 mt-8 inline-flex min-h-12 min-w-[196px] shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-white px-6 text-sm font-semibold text-ink transition-colors hover:bg-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink lg:mt-0"
           >
             Связаться со&nbsp;мной
           </Link>

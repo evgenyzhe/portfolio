@@ -53,7 +53,7 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-start gap-12 px-[52px] py-16 lg:grid-cols-[0.92fr_1.08fr] lg:py-20 xl:min-h-0">
+      <section className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-start gap-12 px-[52px] py-16 lg:grid-cols-2 lg:py-20 xl:min-h-0">
         <div>
           <div className="relative h-[100px] w-[100px] overflow-hidden rounded-full bg-white">
             <Image
@@ -88,7 +88,7 @@ export default function Home() {
             </LinkButton>
           </div>
         </div>
-        <div className="relative self-start">
+        <div className="relative self-start lg:mt-[132px]">
           <LaptopMockup />
         </div>
       </section>

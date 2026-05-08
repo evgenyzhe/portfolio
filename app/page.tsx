@@ -13,6 +13,13 @@ import {
 } from "@/lib/portfolio-data";
 
 export default function Home() {
+  const positioningIcons = [
+    "images/img-icon-1-3.png",
+    "images/img-icon-2-3.png",
+    "images/img-icon-3-3.png",
+    "images/img-icon-4-3.png"
+  ];
+
   return (
     <main id="top">
       <header className="sticky top-0 z-50 bg-[#F6F7F7]">
@@ -100,14 +107,22 @@ export default function Home() {
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
             Помогаю командам
           </p>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-[80px] grid gap-x-4 gap-y-24 sm:grid-cols-2 lg:grid-cols-4">
             {positioningItems.map((item, index) => (
               <div
                 key={item}
-                className="rounded-[32px] bg-white p-5 text-lg font-semibold leading-7 text-ink"
+                className="relative rounded-[32px] bg-white p-5 pt-[80px] text-lg font-semibold leading-7 text-ink"
               >
-                <PositioningIcon index={index} />
-                <p className="mt-5">{item}</p>
+                <Image
+                  src={getAssetPath(positioningIcons[index])}
+                  alt=""
+                  width={1126}
+                  height={1126}
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -top-14 left-1/2 w-32 -translate-x-1/2"
+                  sizes="128px"
+                />
+                <p>{item}</p>
               </div>
             ))}
           </div>
@@ -197,7 +212,7 @@ export default function Home() {
             width={580}
             height={571}
             aria-hidden="true"
-            className="pointer-events-none absolute -top-16 right-10 hidden w-[260px] lg:block xl:right-16 xl:w-[300px]"
+            className="pointer-events-none absolute -top-16 right-10 hidden w-[208px] lg:block xl:right-16 xl:w-[240px]"
             sizes="300px"
           />
           <div className="relative z-10 max-w-3xl">
@@ -222,49 +237,5 @@ export default function Home() {
         </div>
       </section>
     </main>
-  );
-}
-
-function PositioningIcon({ index }: { index: number }) {
-  const paths = [
-    <>
-      <path d="M4 7h16" />
-      <path d="M4 12h10" />
-      <path d="M4 17h7" />
-      <path d="M17 13l3 3-3 3" />
-    </>,
-    <>
-      <path d="M5 19V5" />
-      <path d="M5 19h14" />
-      <path d="M8 15l3-4 3 2 4-6" />
-    </>,
-    <>
-      <path d="M6 5h8l4 4v10H6z" />
-      <path d="M14 5v4h4" />
-      <path d="M9 14h6" />
-      <path d="M9 17h4" />
-    </>,
-    <>
-      <path d="M12 5v4" />
-      <path d="M12 15v4" />
-      <path d="M5 12h4" />
-      <path d="M15 12h4" />
-      <circle cx="12" cy="12" r="3" />
-    </>
-  ];
-
-  return (
-    <svg
-      aria-hidden="true"
-      className="h-8 w-8 text-accent"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.75"
-      viewBox="0 0 24 24"
-    >
-      {paths[index]}
-    </svg>
   );
 }

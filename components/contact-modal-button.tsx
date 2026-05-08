@@ -14,7 +14,9 @@ export function ContactModalButton({
   className = ""
 }: ContactModalButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [copyStatus, setCopyStatus] = useState("");
   const titleId = useId();
+  const phoneNumber = "+79997687086";
 
   useEffect(() => {
     if (!isOpen) {
@@ -38,15 +40,26 @@ export function ContactModalButton({
 
   const variantClassName =
     variant === "light"
-      ? "bg-white text-ink hover:bg-accent hover:text-white focus:ring-white focus:ring-offset-ink"
-      : "bg-panel text-ink hover:bg-accent hover:text-white focus:ring-accent focus:ring-offset-2";
+      ? "bg-white text-ink hover:bg-accent hover:text-white focus-visible:ring-white focus-visible:ring-offset-ink"
+      : "bg-panel text-ink hover:bg-accent hover:text-white focus-visible:ring-accent focus-visible:ring-offset-2";
+
+  const copyPhoneNumber = async () => {
+    try {
+      await navigator.clipboard.writeText(phoneNumber);
+      setCopyStatus("Скопировано");
+      window.setTimeout(() => setCopyStatus(""), 1800);
+    } catch {
+      setCopyStatus("Не удалось скопировать");
+      window.setTimeout(() => setCopyStatus(""), 1800);
+    }
+  };
 
   return (
     <>
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className={`inline-flex min-h-12 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-6 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 ${variantClassName} ${className}`}
+        className={`inline-flex min-h-12 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-6 text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 ${variantClassName} ${className}`}
       >
         {children}
       </button>
@@ -71,19 +84,40 @@ export function ContactModalButton({
                 type="button"
                 onClick={() => setIsOpen(false)}
                 aria-label="Закрыть модальное окно"
-                className="-mr-2 -mt-2 inline-flex h-10 w-10 items-center justify-center rounded-full text-2xl leading-none text-muted transition hover:bg-panel hover:text-ink focus:outline-none focus:ring-2 focus:ring-accent"
+                className="-mr-2 -mt-2 flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-muted transition hover:bg-panel hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
-                ×
+                <span className="block text-2xl leading-none">×</span>
               </button>
             </div>
 
             <dl className="mt-7 space-y-5 text-base leading-7">
               <div>
                 <dt className="font-semibold text-ink">Номер для связи:</dt>
-                <dd className="mt-1 text-muted">
-                  <a href="tel:+79997687086" className="transition hover:text-accent">
-                    +79997687086
-                  </a>
+                <dd className="mt-1">
+                  <button
+                    type="button"
+                    onClick={copyPhoneNumber}
+                    className="inline-flex items-center gap-2 rounded-full text-left text-muted transition hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4"
+                    aria-label="Скопировать номер телефона"
+                  >
+                    <span>{phoneNumber}</span>
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="9" y="9" width="13" height="13" rx="2" />
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                    </svg>
+                  </button>
+                  <span className="ml-3 text-sm text-accent" aria-live="polite">
+                    {copyStatus}
+                  </span>
                 </dd>
               </div>
               <div>

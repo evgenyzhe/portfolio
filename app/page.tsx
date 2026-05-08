@@ -21,14 +21,14 @@ export default function Home() {
   ];
 
   return (
-    <main id="top">
-      <header className="sticky top-0 z-50 bg-[#F6F7F7]">
+    <main id="top" className="site-background">
+      <header className="sticky top-0 z-50 bg-[#F2F2F4]/80 backdrop-blur-xl">
         <nav
           aria-label="Primary navigation"
           className="mx-auto flex max-w-7xl items-center justify-between px-[52px] py-5"
         >
           <SmoothScrollLink href="#top" className="text-sm font-semibold text-ink">
-            Product Designer Portfolio
+            Дизайнер цифровых продуктов
           </SmoothScrollLink>
           <div className="hidden items-center gap-7 text-sm font-medium text-muted sm:flex">
             <SmoothScrollLink

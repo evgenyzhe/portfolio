@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { CaseCard } from "@/components/case-card";
+import { ContactModalButton } from "@/components/contact-modal-button";
 import { LaptopMockup } from "@/components/laptop-mockup";
 import { LinkButton } from "@/components/link-button";
 import { SectionHeading } from "@/components/section-heading";
@@ -87,10 +87,18 @@ export default function Home() {
             бизнес-логику, аналитику и&nbsp;операционные процессы
             в&nbsp;понятные и&nbsp;масштабируемые интерфейсные решения.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <LinkButton href="#cases">Посмотреть кейсы</LinkButton>
-            <LinkButton href="#contact" variant="secondary">
-              Связаться со мной
+            <ContactModalButton>
+              Связаться
+            </ContactModalButton>
+            <LinkButton
+              href="/cv.pdf"
+              variant="secondary"
+              download
+              className="whitespace-nowrap"
+            >
+              Скачать CV
             </LinkButton>
           </div>
         </div>
@@ -182,11 +190,21 @@ export default function Home() {
         className="border-y border-line bg-transparent py-20 sm:py-24"
       >
         <div className="mx-auto grid max-w-7xl gap-10 px-[52px] lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          <SectionHeading
-            eyebrow="Опыт"
-            title="Более 12&nbsp;лет в&nbsp;области интерфейсов, более 9&nbsp;лет в&nbsp;продуктовых командах"
-            description="Я&nbsp;работал в&nbsp;Альфа-банке, Мегафоне и&nbsp;дизайн-студиях, уделяя особое внимание финтеху, телекоммуникациям, интерфейсам B2B/B2C, аналитике и&nbsp;продуктам, в&nbsp;которых бизнес-логика формирует пользовательский опыт."
-          />
+          <div>
+            <SectionHeading
+              eyebrow="Опыт"
+              title="Более 12&nbsp;лет в&nbsp;области интерфейсов, более 9&nbsp;лет в&nbsp;продуктовых командах"
+              description="Я&nbsp;работал в&nbsp;Альфа-банке, Мегафоне и&nbsp;дизайн-студиях, уделяя особое внимание финтеху, телекоммуникациям, интерфейсам B2B/B2C, аналитике и&nbsp;продуктам, в&nbsp;которых бизнес-логика формирует пользовательский опыт."
+            />
+            <LinkButton
+              href="/cv.pdf"
+              variant="secondary"
+              download
+              className="mt-8 whitespace-nowrap"
+            >
+              Скачать CV
+            </LinkButton>
+          </div>
           <div className="grid gap-4 sm:grid-cols-3 lg:mt-9">
             {[
               ["12+", "лет в\u00a0дизайне интерфейсов"],
@@ -228,12 +246,12 @@ export default function Home() {
               взаимодействие между людьми и&nbsp;командами
             </p>
           </div>
-          <Link
-            href="mailto:hello@example.com"
-            className="relative z-10 mt-8 inline-flex min-h-12 min-w-[196px] shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-white px-6 text-sm font-semibold text-ink transition-colors hover:bg-accent hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-ink lg:mt-0"
+          <ContactModalButton
+            variant="light"
+            className="relative z-10 mt-8 min-w-[196px] lg:mt-0"
           >
             Связаться со&nbsp;мной
-          </Link>
+          </ContactModalButton>
         </div>
       </section>
     </main>

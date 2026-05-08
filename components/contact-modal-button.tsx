@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 
 type ContactModalButtonProps = {
   children: React.ReactNode;
@@ -8,15 +8,42 @@ type ContactModalButtonProps = {
   className?: string;
 };
 
+const modalTransitionDuration = 300;
+
 export function ContactModalButton({
   children,
   variant = "secondary",
   className = ""
 }: ContactModalButtonProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
   const [copyStatus, setCopyStatus] = useState("");
+  const closeTimerRef = useRef<number | null>(null);
   const titleId = useId();
   const phoneNumber = "+79997687086";
+
+  const clearCloseTimer = useCallback(() => {
+    if (closeTimerRef.current !== null) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  }, []);
+
+  const openModal = useCallback(() => {
+    clearCloseTimer();
+    setIsOpen(true);
+    window.requestAnimationFrame(() => setIsVisible(true));
+  }, [clearCloseTimer]);
+
+  const closeModal = useCallback(() => {
+    setIsVisible(false);
+    clearCloseTimer();
+    closeTimerRef.current = window.setTimeout(() => {
+      setIsOpen(false);
+      setCopyStatus("");
+      closeTimerRef.current = null;
+    }, modalTransitionDuration);
+  }, [clearCloseTimer]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -25,7 +52,7 @@ export function ContactModalButton({
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setIsOpen(false);
+        closeModal();
       }
     };
 
@@ -36,7 +63,9 @@ export function ContactModalButton({
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen]);
+  }, [closeModal, isOpen]);
+
+  useEffect(() => clearCloseTimer, [clearCloseTimer]);
 
   const variantClassName =
     variant === "light"
@@ -58,7 +87,7 @@ export function ContactModalButton({
     <>
       <button
         type="button"
-        onClick={() => setIsOpen(true)}
+        onClick={openModal}
         className={`inline-flex min-h-12 shrink-0 items-center justify-center whitespace-nowrap rounded-full px-6 text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 ${variantClassName} ${className}`}
       >
         {children}
@@ -66,14 +95,20 @@ export function ContactModalButton({
 
       {isOpen ? (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/70 px-5 py-8 backdrop-blur-sm"
-          onMouseDown={() => setIsOpen(false)}
+          className={`fixed inset-0 z-[100] flex items-center justify-center bg-ink/70 px-5 py-8 backdrop-blur-sm transition-opacity duration-300 ease-out motion-reduce:transition-none ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+          onMouseDown={closeModal}
         >
           <div
             role="dialog"
             aria-modal="true"
             aria-labelledby={titleId}
-            className="relative w-full max-w-md rounded-[32px] bg-white p-7 text-ink shadow-2xl"
+            className={`relative w-full max-w-md rounded-[32px] bg-white p-7 text-ink shadow-2xl transition-all duration-300 ease-out motion-reduce:transition-none ${
+              isVisible
+                ? "translate-y-0 scale-100 opacity-100"
+                : "translate-y-3 scale-[0.98] opacity-0"
+            }`}
             onMouseDown={(event) => event.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-6">
@@ -82,7 +117,7 @@ export function ContactModalButton({
               </h2>
               <button
                 type="button"
-                onClick={() => setIsOpen(false)}
+                onClick={closeModal}
                 aria-label="Закрыть модальное окно"
                 className="-mr-2 -mt-2 flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-muted transition hover:bg-panel hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >

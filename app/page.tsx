@@ -181,13 +181,13 @@ export default function Home() {
         id="experience"
         className="border-y border-line bg-transparent py-20 sm:py-24"
       >
-        <div className="mx-auto grid max-w-7xl gap-10 px-[52px] lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+        <div className="mx-auto grid max-w-7xl gap-10 px-[52px] lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <SectionHeading
             eyebrow="Опыт"
             title="Более 12&nbsp;лет в&nbsp;области интерфейсов, более 9&nbsp;лет в&nbsp;продуктовых командах"
             description="Я&nbsp;работал в&nbsp;Альфа-банке, Мегафоне и&nbsp;дизайн-студиях, уделяя особое внимание финтеху, телекоммуникациям, интерфейсам B2B/B2C, аналитике и&nbsp;продуктам, в&nbsp;которых бизнес-логика формирует пользовательский опыт."
           />
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-3 lg:mt-9">
             {[
               ["12+", "лет в\u00a0дизайне интерфейсов"],
               ["9+", "лет в\u00a0продуктовых командах"],

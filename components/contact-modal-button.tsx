@@ -95,7 +95,7 @@ export function ContactModalButton({
 
       {isOpen ? (
         <div
-          className={`fixed inset-0 z-[100] flex items-center justify-center bg-ink/70 px-5 py-8 backdrop-blur-sm transition-opacity duration-300 ease-out motion-reduce:transition-none ${
+          className={`fixed inset-0 z-[100] flex items-center justify-center bg-ink/40 px-5 py-8 backdrop-blur-sm transition-opacity duration-300 ease-out motion-reduce:transition-none ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
           onMouseDown={closeModal}
@@ -121,7 +121,19 @@ export function ContactModalButton({
                 aria-label="Закрыть модальное окно"
                 className="-mr-2 -mt-2 flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-muted transition hover:bg-panel hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
               >
-                <span className="block text-2xl leading-none">×</span>
+                <svg
+                  aria-hidden="true"
+                  className="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
               </button>
             </div>
 

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { LinkButton } from "@/components/link-button";
 import { SectionHeading } from "@/components/section-heading";
+import { SmoothScrollLink } from "@/components/smooth-scroll-link";
 import { getAssetPath } from "@/lib/get-asset-path";
 import { getPagePath } from "@/lib/get-page-path";
 import {
@@ -68,15 +69,20 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const nextCase = getCaseStudyBySlug(caseStudy.nextCaseSlug);
 
   return (
-    <main className="site-background min-h-screen">
+    <main id="top" className="site-background min-h-screen">
       <header className="sticky top-0 z-50 bg-[#F2F2F4]/80 backdrop-blur-xl">
         <nav
           aria-label="Case study navigation"
-          className="mx-auto flex max-w-7xl items-center px-[52px] py-5"
+          className="mx-auto flex max-w-7xl items-center justify-between px-[52px] py-5"
         >
           <a href={getPagePath("/")} className="text-sm font-semibold text-ink">
             Дизайнер цифровых продуктов
           </a>
+          <div className="hidden items-center gap-7 text-sm font-medium text-muted sm:flex">
+            <SmoothScrollLink href="#top" className="transition hover:text-ink">
+              Наверх
+            </SmoothScrollLink>
+          </div>
         </nav>
       </header>
 

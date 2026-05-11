@@ -9,7 +9,6 @@ export function CaseCard({
   area,
   previewImage,
   problem,
-  role,
   outcome
 }: CaseStudy) {
   return (
@@ -18,14 +17,14 @@ export function CaseCard({
       className="group block rounded-[32px] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4"
       aria-label={`Open case study: ${title}`}
     >
-      <article className="flex flex-col overflow-hidden rounded-[32px] bg-white transition-colors duration-200 group-hover:bg-[#f4f5f6] group-focus-visible:bg-[#f4f5f6]">
-        <div className="aspect-square w-full bg-panel p-6">
-          <div className="relative h-full w-full overflow-hidden">
+      <article className="flex flex-col overflow-hidden rounded-[32px] bg-white shadow-none transition-shadow duration-200 group-hover:shadow-soft group-focus-visible:shadow-soft">
+        <div className="aspect-[2/1] w-full">
+          <div className="relative h-full w-full overflow-hidden rounded-t-[32px]">
             <Image
               src={getAssetPath(previewImage)}
               alt={`${title} interface preview`}
               fill
-              className="object-contain"
+              className="object-cover"
               sizes="(min-width: 1024px) 30vw, 100vw"
             />
           </div>
@@ -40,10 +39,6 @@ export function CaseCard({
             <div>
               <dt className="font-semibold text-ink">Problem</dt>
               <dd className="mt-1 text-muted">{problem}</dd>
-            </div>
-            <div>
-              <dt className="font-semibold text-ink">Role</dt>
-              <dd className="mt-1 text-muted">{role}</dd>
             </div>
             <div>
               <dt className="font-semibold text-ink">Result</dt>

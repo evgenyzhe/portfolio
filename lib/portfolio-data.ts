@@ -27,7 +27,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       "Clarifying fragmented service journeys and creating a practical roadmap for design decisions.",
     area: "Service ecosystem",
-    previewImage: "images/case-studies/ux-audit-preview.png",
+    previewImage: "images/case-studies/rank-model.png",
     intro:
       "This placeholder case study shows how I would structure an audit for a mature service with multiple entry points, operational constraints, and accumulated UX debt.",
     problem:
@@ -56,7 +56,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       "Translating conditional financial logic into a guided decision flow that feels understandable and trustworthy.",
     area: "Fintech",
-    previewImage: "images/case-studies/financial-scenario-preview.png",
+    previewImage: "images/case-studies/calculator.png",
     intro:
       "This placeholder case study focuses on a banking scenario where product value depended on making complex rules legible without oversimplifying them.",
     problem:
@@ -77,6 +77,35 @@ export const caseStudies: CaseStudy[] = [
       "Placeholder outcome: the team had a clearer decision flow for a complex banking scenario.",
       "Placeholder outcome: product, design, and engineering could review the same logic model with less ambiguity."
     ],
+    nextCaseSlug: "interface-system-b2b-product"
+  },
+  {
+    slug: "interface-system-b2b-product",
+    title: "Interface system for B2B product",
+    subtitle:
+      "Turning scattered product logic into a clearer interface system for repeated operational workflows.",
+    area: "B2B product",
+    previewImage: "images/case-studies/tarif.png",
+    intro:
+      "This placeholder case study focuses on interface system work for a product where teams needed consistent patterns across complex recurring tasks.",
+    problem:
+      "A growing B2B product had similar workflows solved in different ways, which made the experience harder to learn, maintain, and scale.",
+    role:
+      "Defined reusable patterns, clarified states, and aligned interface decisions with product and engineering constraints.",
+    process: [
+      "Audited repeated workflows to find where similar user decisions were represented with inconsistent UI patterns.",
+      "Grouped interface problems by product logic, interaction pattern, and implementation constraint.",
+      "Worked with stakeholders to separate reusable system decisions from one-off screen-level fixes."
+    ],
+    solution: [
+      "Created a more consistent structure for forms, tables, detail views, filters, and status communication.",
+      "Defined reusable states and interaction rules so teams could extend the product without redesigning each flow from scratch.",
+      "Documented design decisions in a format that could support delivery and future product iterations."
+    ],
+    outcome: [
+      "Placeholder outcome: teams had a clearer interface foundation for repeated B2B workflows.",
+      "Placeholder outcome: product and engineering could make future UI decisions with fewer pattern conflicts."
+    ],
     nextCaseSlug: "dashboard-analytics-interface"
   },
   {
@@ -85,7 +114,7 @@ export const caseStudies: CaseStudy[] = [
     subtitle:
       "Organising dense signals into a dashboard that supports fast scanning, comparison, and action.",
     area: "Analytics",
-    previewImage: "images/case-studies/dashboard-analytics-preview.png",
+    previewImage: "images/case-studies/anketa.png",
     intro:
       "This placeholder case study represents the kind of analytical interface work where the core challenge is not adding data, but making it operationally useful.",
     problem:

@@ -144,7 +144,7 @@ export default function Home() {
             title="Ниже — проекты, в&nbsp;которых я&nbsp;работал со&nbsp;сложными сценариями, многослойной бизнес-логикой и&nbsp;продуктовой неопределённостью"
             description="В кейсах показываю не&nbsp;только итоговый интерфейс, но&nbsp;и&nbsp;ход мышления: контекст задачи, ограничения, ключевые решения и&nbsp;мой вклад в&nbsp;результат."
           />
-          <div className="mt-12 grid items-start gap-6 md:grid-cols-2">
+          <div className="mt-12 grid items-start gap-12 md:grid-cols-2">
             {caseStudies.map((caseStudy) => (
               <CaseCard key={caseStudy.title} {...caseStudy} />
             ))}

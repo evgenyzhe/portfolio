@@ -25,7 +25,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-[#F2F2F4]/80 backdrop-blur-xl">
         <nav
           aria-label="Primary navigation"
-          className="mx-auto flex max-w-7xl items-center justify-between px-[52px] py-5"
+          className="mx-auto flex max-w-7xl items-center justify-between px-8 sm:px-[52px] py-5"
         >
           <SmoothScrollLink href="#top" className="text-sm font-semibold text-ink">
             Дизайнер цифровых продуктов
@@ -59,7 +59,7 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-start gap-12 px-[52px] py-16 lg:grid-cols-2 lg:py-20 xl:min-h-0">
+      <section className="mx-auto grid min-h-[calc(100vh-73px)] max-w-7xl items-start gap-12 px-8 sm:px-[52px] py-16 lg:grid-cols-2 lg:py-20 xl:min-h-0">
         <div>
           <div className="relative h-[100px] w-[100px] overflow-hidden rounded-full bg-white">
             <Image
@@ -111,7 +111,7 @@ export default function Home() {
         id="positioning"
         className="border-b border-line bg-transparent pb-20 pt-8 sm:pb-24"
       >
-        <div className="mx-auto max-w-7xl px-[52px]">
+        <div className="mx-auto max-w-7xl px-8 sm:px-[52px]">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
             Помогаю командам
           </p>
@@ -138,7 +138,7 @@ export default function Home() {
       </section>
 
       <section id="cases" className="py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-[52px]">
+        <div className="mx-auto max-w-7xl px-8 sm:px-[52px]">
           <SectionHeading
             eyebrow="Избранные кейсы"
             title="Ниже — проекты, в&nbsp;которых я&nbsp;работал со&nbsp;сложными сценариями, многослойной бизнес-логикой и&nbsp;продуктовой неопределённостью"
@@ -156,7 +156,7 @@ export default function Home() {
         id="process"
         className="border-y border-line bg-ink py-20 text-white sm:py-24"
       >
-        <div className="mx-auto max-w-7xl px-[52px]">
+        <div className="mx-auto max-w-7xl px-8 sm:px-[52px]">
           <div className="max-w-3xl">
             <SectionHeading
               eyebrow="Как я работаю"
@@ -189,7 +189,7 @@ export default function Home() {
         id="experience"
         className="border-y border-line bg-transparent py-20 sm:py-24"
       >
-        <div className="mx-auto grid max-w-7xl gap-10 px-[52px] lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+        <div className="mx-auto grid max-w-7xl gap-10 px-8 sm:px-[52px] lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div>
             <SectionHeading
               eyebrow="Опыт"
@@ -222,7 +222,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="px-[52px] py-20 sm:py-28">
+      <section id="contact" className="px-8 sm:px-[52px] py-20 sm:py-28">
         <div className="relative mx-auto max-w-7xl rounded-[32px] bg-ink p-8 text-white sm:p-12 lg:flex lg:items-end lg:justify-between lg:gap-12">
           <Image
             src={getAssetPath("images/image-contact.png")}

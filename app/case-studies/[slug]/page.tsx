@@ -73,7 +73,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       <header className="sticky top-0 z-50 bg-[#F2F2F4]/80 backdrop-blur-xl">
         <nav
           aria-label="Case study navigation"
-          className="mx-auto flex max-w-7xl items-center justify-between px-[52px] py-5"
+          className="mx-auto flex max-w-7xl items-center justify-between px-8 sm:px-[52px] py-5"
         >
           <a href={getPagePath("/")} className="text-sm font-semibold text-ink">
             Дизайнер цифровых продуктов
@@ -86,7 +86,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         </nav>
       </header>
 
-      <article className="mx-auto max-w-7xl px-[52px] pb-16 pt-20 sm:pb-20 sm:pt-20">
+      <article className="mx-auto max-w-7xl px-8 sm:px-[52px] pb-16 pt-20 sm:pb-20 sm:pt-20">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <LinkButton
